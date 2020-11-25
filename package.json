@@ -1,23 +1,23 @@
 {
-  "name": "sht",
+  "name": "aria2_heroku_sht_public",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xkhs/sht.git"
+    "url": "git+https://github.com/todokku/aria2_heroku_sht_public.git"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "agentkeepalive": "^4.1.3",
+    "agentkeepalive": "^4.1.2",
     "bluebird": "^3.7.2",
     "cheerio": "^1.0.0-rc.3",
     "express": "^4.17.1",
-    "got": "^11.8.0",
-    "http-proxy": "^1.18.1",
-    "human-interval": "^2.0.0",
-    "pg": "^8.5.1",
+    "got": "^11.1.2",
+    "http-proxy": "^1.18.0",
+    "human-interval": "^1.0.0",
+    "pg": "^8.1.0",
     "request": "^2.88.2",
     "tough-cookie": "^4.0.0"
   },
