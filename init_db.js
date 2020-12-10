@@ -58,13 +58,13 @@ async function main(){
         url VARCHAR(10000) REFERENCES posts(url)
     );`);
 
-    let respone = await gotInstance.get('forum.php?mod=forumdisplay&fid=148&page=1');
+    let respone = await gotInstance.get('forum.php?mod=forumdisplay&fid=145&page=1');
     const html = respone.body;
     const $ = cheerio.load(html);
     // console.log($("tbody[id^='normalthread']").length);
     const lastPageHref = $("div.pg > a.last").attr('href');
     response = await gotInstance.get(lastPageHref);
-    const regex = /(forum-148-)(\d*).html/;
+    const regex = /(forum-145-)(\d*).html/;
     const match = lastPageHref.match(regex);
     const forumPrefix = match[1];
     const maxPageNumber = parseInt(match[2]);
