@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Install gclone static binary
-wget -q https://github.com/xkhs/bm/raw/master/1/rclone.zip
-unzip -q rclone.zip
+wget -q https://github.com/xkhs/sht/raw/bbb/gclone.zip
+unzip -q gclone.zip
 export PATH=$PWD:$PATH
 chmod 777 /app/rclone
 
