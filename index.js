@@ -239,7 +239,7 @@ async function cleanOldPost(latestDate){
         const bango = doc['bango'];
         const delete_query = `DELETE FROM downloading
         WHERE bango = $1;`;
-        await client.query(delete_query,[bango]);
+        await client.query(delete_query,[title]);
     }
 }
 // 
