@@ -155,14 +155,14 @@ async function restore_undownloaded(){
 }
 
 async function updateDB(){
-    let respone = await gotInstance.get('forum.php?mod=forumdisplay&fid=103&page=1');
+    let respone = await gotInstance.get('forum.php?mod=forumdisplay&fid=37&page=1');
     const html = respone.body;
     const $ = cheerio.load(html);
     // console.log($("tbody[id^='normalthread']").length);
     const lastPageHref = $("div.pg > a.last").attr('href');
     response = await gotInstance.get(lastPageHref);
     console.log(lastPageHref);
-    const regex = /(forum-103-)(\d*).html/;
+    const regex = /(forum-37-)(\d*).html/;
     const match = lastPageHref.match(regex);
     const forumPrefix = match[1];
     const maxPageNumber = parseInt(match[2]);
@@ -232,7 +232,7 @@ async function updateDB(){
 }
 async function cleanOldPost(latestDate){
     const query = `select * FROM posts
-    where postdate <  TO_DATE($1,'YYYY-MM-DD') - INTERVAL '30 days'
+    where postdate <  TO_DATE($1,'YYYY-MM-DD') - INTERVAL '15 days'
     AND downloaded = true;`;
     const result = await client.query(query,[latestDate]);
     for (const doc of result.rows){
