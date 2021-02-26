@@ -232,14 +232,14 @@ async function updateDB(){
 }
 async function cleanOldPost(latestDate){
     const query = `select * FROM posts
-    where postdate <  TO_DATE($1,'YYYY-MM-DD') - INTERVAL '15 days'
+    where postdate <  TO_DATE($1,'YYYY-MM-DD') - INTERVAL '30 days'
     AND downloaded = true;`;
     const result = await client.query(query,[latestDate]);
     for (const doc of result.rows){
-        const title = doc['title'];
+        const bango = doc['bango'];
         const delete_query = `DELETE FROM downloading
-        WHERE title = $1;`;
-        await client.query(delete_query,[title]);
+        WHERE bango = $1;`;
+        await client.query(delete_query,[bango]);
     }
 }
 // 
